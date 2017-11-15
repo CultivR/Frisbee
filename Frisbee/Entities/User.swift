@@ -2,7 +2,7 @@
 //  User.swift
 //  Frisbee
 //
-//  Created by Jordan Kay on 10/21/17.
+//  Created by Jordan Kay on 11/14/17.
 //  Copyright © 2017 Cultivr. All rights reserved.
 //
 
@@ -22,4 +22,3 @@ extension User: Decodable {
         )
     }
 }
-
