@@ -24,6 +24,7 @@
 		1735AD1E1F9BDA3E00F3B86C /* DISCSessionAPI+Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17688C2B1F3CFBE300CF59B6 /* DISCSessionAPI+Authentication.swift */; };
 		1735AD201F9BFB8F00F3B86C /* Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1735AD1F1F9BFB8F00F3B86C /* Registration.swift */; };
 		17752DFC1FBBACF500F81A48 /* FrisbeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17752DFB1FBBACF500F81A48 /* FrisbeeTests.swift */; };
+		177687CE1FBFB046009463B7 /* Behavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177687CD1FBFB046009463B7 /* Behavior.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		17752DF91FBBACF400F81A48 /* FrisbeeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FrisbeeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		17752DFB1FBBACF500F81A48 /* FrisbeeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrisbeeTests.swift; sourceTree = "<group>"; };
 		17752DFD1FBBACF500F81A48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		177687CD1FBFB046009463B7 /* Behavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Behavior.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 		17688C191F3CF20D00CF59B6 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				177687CD1FBFB046009463B7 /* Behavior.swift */,
 				1735AD1F1F9BFB8F00F3B86C /* Registration.swift */,
 				1735AD181F9BCD8700F3B86C /* User.swift */,
 			);
@@ -294,6 +297,7 @@
 				1735AD1D1F9BDA2E00F3B86C /* DISCSessionAPI.swift in Sources */,
 				1735AD141F9BC36900F3B86C /* DISCCredential.swift in Sources */,
 				1735AD171F9BC9C200F3B86C /* DISCSession.swift in Sources */,
+				177687CE1FBFB046009463B7 /* Behavior.swift in Sources */,
 				1735AD1B1F9BD7FC00F3B86C /* DISCAPI+User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
