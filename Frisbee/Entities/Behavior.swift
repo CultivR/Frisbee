@@ -7,12 +7,12 @@
 //
 
 public struct Behavior {
-    public let description: String
+    public let name: String
     public let representation: Representation
     public let traits: [String]
     
-    public init(description: String, representation: Representation, traits: [String]) {
-        self.description = description
+    public init(name: String, representation: Representation, traits: [String]) {
+        self.name = name
         self.representation = representation
         self.traits = traits
     }
