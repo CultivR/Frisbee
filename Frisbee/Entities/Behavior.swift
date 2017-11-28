@@ -6,14 +6,14 @@
 //  Copyright © 2017 Cultivr. All rights reserved.
 //
 
-import UIKit
-
 public struct Behavior {
-    public let name: String
-    public let image: UIImage
+    public let description: String
+    public let representation: Representation
+    public let traits: [String]
     
-    public init(name: String, image: UIImage) {
-        self.name = name
-        self.image = image
+    public init(description: String, representation: Representation, traits: [String]) {
+        self.description = description
+        self.representation = representation
+        self.traits = traits
     }
 }

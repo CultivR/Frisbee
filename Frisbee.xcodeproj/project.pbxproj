@@ -25,6 +25,8 @@
 		1735AD201F9BFB8F00F3B86C /* Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1735AD1F1F9BFB8F00F3B86C /* Registration.swift */; };
 		17752DFC1FBBACF500F81A48 /* FrisbeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17752DFB1FBBACF500F81A48 /* FrisbeeTests.swift */; };
 		177687CE1FBFB046009463B7 /* Behavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177687CD1FBFB046009463B7 /* Behavior.swift */; };
+		177687E71FCE0A22009463B7 /* Representation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177687E61FCE0A22009463B7 /* Representation.swift */; };
+		177687E91FCE0C5B009463B7 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177687E81FCE0C5B009463B7 /* Profile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,8 @@
 		17752DFB1FBBACF500F81A48 /* FrisbeeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrisbeeTests.swift; sourceTree = "<group>"; };
 		17752DFD1FBBACF500F81A48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		177687CD1FBFB046009463B7 /* Behavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Behavior.swift; sourceTree = "<group>"; };
+		177687E61FCE0A22009463B7 /* Representation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Representation.swift; sourceTree = "<group>"; };
+		177687E81FCE0C5B009463B7 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +143,8 @@
 			isa = PBXGroup;
 			children = (
 				177687CD1FBFB046009463B7 /* Behavior.swift */,
+				177687E81FCE0C5B009463B7 /* Profile.swift */,
+				177687E61FCE0A22009463B7 /* Representation.swift */,
 				1735AD1F1F9BFB8F00F3B86C /* Registration.swift */,
 				1735AD181F9BCD8700F3B86C /* User.swift */,
 			);
@@ -290,8 +296,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1735AD161F9BC93C00F3B86C /* DISCAPI.swift in Sources */,
+				177687E91FCE0C5B009463B7 /* Profile.swift in Sources */,
 				1735AD121F9BC32800F3B86C /* DISCAPIError.swift in Sources */,
 				1735AD1E1F9BDA3E00F3B86C /* DISCSessionAPI+Authentication.swift in Sources */,
+				177687E71FCE0A22009463B7 /* Representation.swift in Sources */,
 				1735AD191F9BCD8700F3B86C /* User.swift in Sources */,
 				1735AD201F9BFB8F00F3B86C /* Registration.swift in Sources */,
 				1735AD1D1F9BDA2E00F3B86C /* DISCSessionAPI.swift in Sources */,
