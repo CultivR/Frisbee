@@ -8,10 +8,18 @@
 
 public struct Profile {
     public let name: String
-    public let behavior: Behavior
+    public let behaviors: [Behavior]
     
-    public init(name: String, behavior: Behavior) {
+    public init(name: String, behaviors: [Behavior]) {
         self.name = name
-        self.behavior = behavior
+        self.behaviors = behaviors
     }
+    
+    public var salientBehaviors: [Behavior] {
+        return Array(behaviors.prefix(.salientBehaviorMax))
+    }
+}
+
+private extension Int {
+    static let salientBehaviorMax = 2
 }
