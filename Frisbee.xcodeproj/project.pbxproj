@@ -27,6 +27,9 @@
 		177687CE1FBFB046009463B7 /* Behavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177687CD1FBFB046009463B7 /* Behavior.swift */; };
 		177687E71FCE0A22009463B7 /* Representation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177687E61FCE0A22009463B7 /* Representation.swift */; };
 		177687E91FCE0C5B009463B7 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177687E81FCE0C5B009463B7 /* Profile.swift */; };
+		179352E51FDF5A6800A1B666 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179352E41FDF5A6800A1B666 /* Answer.swift */; };
+		179352E71FDF5A8200A1B666 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179352E61FDF5A8200A1B666 /* Question.swift */; };
+		179352E91FDF5B0300A1B666 /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179352E81FDF5B0300A1B666 /* Quiz.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +67,9 @@
 		177687CD1FBFB046009463B7 /* Behavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Behavior.swift; sourceTree = "<group>"; };
 		177687E61FCE0A22009463B7 /* Representation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Representation.swift; sourceTree = "<group>"; };
 		177687E81FCE0C5B009463B7 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		179352E41FDF5A6800A1B666 /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
+		179352E61FDF5A8200A1B666 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		179352E81FDF5B0300A1B666 /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,10 +148,13 @@
 		17688C191F3CF20D00CF59B6 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				179352E41FDF5A6800A1B666 /* Answer.swift */,
 				177687CD1FBFB046009463B7 /* Behavior.swift */,
 				177687E81FCE0C5B009463B7 /* Profile.swift */,
 				177687E61FCE0A22009463B7 /* Representation.swift */,
 				1735AD1F1F9BFB8F00F3B86C /* Registration.swift */,
+				179352E61FDF5A8200A1B666 /* Question.swift */,
+				179352E81FDF5B0300A1B666 /* Quiz.swift */,
 				1735AD181F9BCD8700F3B86C /* User.swift */,
 			);
 			path = Entities;
@@ -300,10 +309,13 @@
 				1735AD121F9BC32800F3B86C /* DISCAPIError.swift in Sources */,
 				1735AD1E1F9BDA3E00F3B86C /* DISCSessionAPI+Authentication.swift in Sources */,
 				177687E71FCE0A22009463B7 /* Representation.swift in Sources */,
+				179352E71FDF5A8200A1B666 /* Question.swift in Sources */,
 				1735AD191F9BCD8700F3B86C /* User.swift in Sources */,
 				1735AD201F9BFB8F00F3B86C /* Registration.swift in Sources */,
+				179352E51FDF5A6800A1B666 /* Answer.swift in Sources */,
 				1735AD1D1F9BDA2E00F3B86C /* DISCSessionAPI.swift in Sources */,
 				1735AD141F9BC36900F3B86C /* DISCCredential.swift in Sources */,
+				179352E91FDF5B0300A1B666 /* Quiz.swift in Sources */,
 				1735AD171F9BC9C200F3B86C /* DISCSession.swift in Sources */,
 				177687CE1FBFB046009463B7 /* Behavior.swift in Sources */,
 				1735AD1B1F9BD7FC00F3B86C /* DISCAPI+User.swift in Sources */,
