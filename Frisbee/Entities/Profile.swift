@@ -8,6 +8,8 @@
 
 public struct Profile {
     public let name: String
+    public let jobTitle: String
+    public let company: String
     public let primaryBehavior: Behavior
     public let secondaryBehavior: Behavior?
     
