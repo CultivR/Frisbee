@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1721E324202E957D00DCC43E /* Sqlable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1721E323202E957D00DCC43E /* Sqlable.framework */; };
 		1735ACFE1F9BBCC800F3B86C /* Frisbee.h in Headers */ = {isa = PBXBuildFile; fileRef = 1735ACFC1F9BBCC800F3B86C /* Frisbee.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1735AD081F9BBD7800F3B86C /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1735AD021F9BBD7700F3B86C /* KeychainAccess.framework */; };
 		1735AD091F9BBD7800F3B86C /* Cache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1735AD031F9BBD7700F3B86C /* Cache.framework */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1721E323202E957D00DCC43E /* Sqlable.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sqlable.framework; path = Carthage/Build/iOS/Sqlable.framework; sourceTree = "<group>"; };
 		1735ACFA1F9BBCC800F3B86C /* Frisbee.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Frisbee.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1735ACFC1F9BBCC800F3B86C /* Frisbee.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Frisbee.h; sourceTree = "<group>"; };
 		1735ACFD1F9BBCC800F3B86C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				1735AD0B1F9BBD7800F3B86C /* Province.framework in Frameworks */,
 				1735AD0C1F9BBD7800F3B86C /* Decodable.framework in Frameworks */,
 				1735AD0D1F9BBD7800F3B86C /* SwiftTask.framework in Frameworks */,
+				1721E324202E957D00DCC43E /* Sqlable.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,6 +186,7 @@
 		179456671F1EDB5400315769 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1721E323202E957D00DCC43E /* Sqlable.framework */,
 				1735AD031F9BBD7700F3B86C /* Cache.framework */,
 				1735AD061F9BBD7700F3B86C /* Decodable.framework */,
 				1735AD041F9BBD7700F3B86C /* Emissary.framework */,
