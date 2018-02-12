@@ -15,20 +15,14 @@ public struct Profile {
     public let name: String
     public let jobTitle: String?
     public let company: String?
-    public let dominantValue: Int
-    public let interactiveValue: Int
-    public let supportiveValue: Int
-    public let conscientiousValue: Int
+    public let traits: Traits
     
-    public init(id: Int, name: String, jobTitle: String?, company: String?, dominantValue: Int, interactiveValue: Int, supportiveValue: Int, conscientiousValue: Int) {
+    public init(id: Int, name: String, jobTitle: String?, company: String?, traits: Traits) {
         self.id = id
         self.name = name
         self.jobTitle = jobTitle
         self.company = company
-        self.dominantValue = dominantValue
-        self.interactiveValue = interactiveValue
-        self.supportiveValue = supportiveValue
-        self.conscientiousValue = conscientiousValue
+        self.traits = traits
     }
 }
 
@@ -39,10 +33,7 @@ extension Profile: Decodable {
             name: json => "name",
             jobTitle: json => "job",
             company: json => "company",
-            dominantValue: json => "dominant",
-            interactiveValue: json => "interactive",
-            supportiveValue: json => "supportive",
-            conscientiousValue: json => "conscientious"
+            traits: json => "traits"
         )
     }
 }
@@ -64,10 +55,12 @@ extension Profile: Sqlable {
         name = try row.get(Profile.name)
         jobTitle = try row.get(Profile.jobTitle)
         company = try row.get(Profile.company)
-        dominantValue = try row.get(Profile.dominantValue)
-        interactiveValue = try row.get(Profile.interactiveValue)
-        supportiveValue = try row.get(Profile.supportiveValue)
-        conscientiousValue = try row.get(Profile.conscientiousValue)
+        
+        let dominantValue: Int = try row.get(Profile.dominantValue)
+        let interactiveValue: Int = try row.get(Profile.interactiveValue)
+        let supportiveValue: Int = try row.get(Profile.supportiveValue)
+        let conscientiousValue: Int = try row.get(Profile.conscientiousValue)
+        traits = Traits(dominantValue: dominantValue, interactiveValue: interactiveValue, supportiveValue: supportiveValue, conscientiousValue: conscientiousValue)
     }
     
     public func valueForColumn(_ column: Column) -> SqlValue? {
@@ -76,11 +69,35 @@ extension Profile: Sqlable {
         case Profile.name: return name
         case Profile.jobTitle: return jobTitle
         case Profile.company: return company
-        case Profile.dominantValue: return dominantValue
-        case Profile.interactiveValue: return interactiveValue
-        case Profile.supportiveValue: return supportiveValue
-        case Profile.conscientiousValue: return conscientiousValue
+        case Profile.dominantValue: return traits.dominantValue
+        case Profile.interactiveValue: return traits.interactiveValue
+        case Profile.supportiveValue: return traits.supportiveValue
+        case Profile.conscientiousValue: return traits.conscientiousValue
         default: return nil
         }
+    }
+}
+
+public extension Profile {
+    struct Traits {
+        public let dominantValue: Int
+        public let interactiveValue: Int
+        public let supportiveValue: Int
+        public let conscientiousValue: Int
+    }
+    
+    struct Behavior {
+        
+    }
+}
+
+extension Profile.Traits: Decodable {
+    public static func decode(_ json: Any) throws -> Profile.Traits {
+        return try Profile.Traits(
+            dominantValue: json => "dominant",
+            interactiveValue: json => "interactive",
+            supportiveValue: json => "supportive",
+            conscientiousValue: json => "conscientious"
+        )
     }
 }
