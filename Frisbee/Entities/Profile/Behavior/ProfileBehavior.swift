@@ -1,124 +1,18 @@
 //
-//  Profile.swift
+//  ProfileBehavior.swift
 //  Frisbee
 //
-//  Created by Jordan Kay on 11/28/17.
-//  Copyright © 2017 Cultivr. All rights reserved.
+//  Created by Jordan Kay on 2/13/18.
+//  Copyright © 2018 Cultivr. All rights reserved.
 //
 
-import protocol Decodable.Decodable
-import Decodable
-import Sqlable
-
-public struct Profile {
-    public let id: Int
-    public let name: String
-    public let jobTitle: String?
-    public let company: String?
-    public let traits: Traits
-    public let behaviorID: Int
-    
-    public func modifying(name: String, jobTitle: String?, company: String?) -> Profile {
-        return .init(
-            id: id,
-            name: name,
-            jobTitle: jobTitle,
-            company: company,
-            traits: traits,
-            behaviorID: behaviorID
-        )
-    }
-}
-
-extension Profile: Decodable {
-    public static func decode(_ json: Any) throws -> Profile {
-        return try Profile(
-            id: json => "attributes" => "id",
-            name: json => "attributes" => "name",
-            jobTitle: json => "attributes" => "job",
-            company: json => "attributes" => "company",
-            traits: json => "attributes" => "traits",
-            behaviorID: json => "relationships" => "behavior" => "data" => "id" as Int
-        )
-    }
-}
-
-extension Profile: Sqlable {
-    public static let tableLayout = [id, name, jobTitle, company, dominantValue, interactiveValue, supportiveValue, conscientiousValue, behaviorID]
-
-    static let id = Column("id", .integer, PrimaryKey(autoincrement: false))
-    static let name = Column("name", .text)
-    static let jobTitle = Column("jobTitle", .text)
-    static let company = Column("company", .text)
-    static let behaviorID = Column("behaviorID", .integer)
-    static let dominantValue = Column("dominantValue", .integer)
-    static let interactiveValue = Column("interactiveValue", .integer)
-    static let supportiveValue = Column("supportiveValue", .integer)
-    static let conscientiousValue = Column("conscientiousValue", .integer)
-    
-    public init(row: ReadRow) throws {
-        try self.init(
-            id: row.get(Profile.id),
-            name: row.get(Profile.name),
-            jobTitle: row.get(Profile.jobTitle),
-            company: row.get(Profile.company),
-            traits: .init(
-                dominantValue: row.get(Profile.dominantValue),
-                interactiveValue: row.get(Profile.interactiveValue),
-                supportiveValue: row.get(Profile.supportiveValue),
-                conscientiousValue: row.get(Profile.conscientiousValue)
-            ),
-            behaviorID: row.get(Profile.behaviorID)
-        )
-    }
-    
-    public func valueForColumn(_ column: Column) -> SqlValue? {
-        switch column {
-        case Profile.id: return id
-        case Profile.name: return name
-        case Profile.jobTitle: return jobTitle
-        case Profile.company: return company
-        case Profile.dominantValue: return traits.dominantValue
-        case Profile.interactiveValue: return traits.interactiveValue
-        case Profile.supportiveValue: return traits.supportiveValue
-        case Profile.conscientiousValue: return traits.conscientiousValue
-        default: return nil
-        }
-    }
-}
-
 public extension Profile {
-    struct Traits {
-        public let dominantValue: Int
-        public let interactiveValue: Int
-        public let supportiveValue: Int
-        public let conscientiousValue: Int
-    }
-    
     struct Behavior {
         public let id: Int
         public let primaryBehavior: Frisbee.Behavior
         public let secondaryBehavior: Frisbee.Behavior?
         public let keywords: String
         public let group: Group
-    }
-}
-
-extension Profile.Traits: Decodable {
-    public static func decode(_ json: Any) throws -> Profile.Traits {
-        return try Profile.Traits(
-            dominantValue: json => "dominant",
-            interactiveValue: json => "interactive",
-            supportiveValue: json => "supportive",
-            conscientiousValue: json => "conscientious"
-        )
-    }
-}
-
-public extension Profile.Behavior {
-    enum Group: String {
-        case singular
-        case dual
     }
 }
 
@@ -174,16 +68,16 @@ extension Profile.Behavior: Sqlable {
     public func valueForColumn(_ column: Column) -> SqlValue? {
         switch column {
         case Profile.Behavior.id: return id
-        case Profile.Behavior.primaryName: return primaryBehavior.name
-        case Profile.Behavior.primaryColorName: return primaryBehavior.color.rawValue
+        case Profile.Behavior.primaryName: return primaryBehavior.value.name
+        case Profile.Behavior.primaryColorName: return primaryBehavior.color.name
         case Profile.Behavior.primaryRepresentationName: return primaryBehavior.representation.name
-        case Profile.Behavior.primaryRepresentationImageName: return primaryBehavior.representation.image.rawValue
-        case Profile.Behavior.secondaryName: return secondaryBehavior?.name
-        case Profile.Behavior.secondaryColorName: return secondaryBehavior?.color.rawValue
+        case Profile.Behavior.primaryRepresentationImageName: return primaryBehavior.representation.image.name
+        case Profile.Behavior.secondaryName: return secondaryBehavior?.value.name
+        case Profile.Behavior.secondaryColorName: return secondaryBehavior?.color.name
         case Profile.Behavior.secondaryRepresentationName: return secondaryBehavior?.representation.name
-        case Profile.Behavior.secondaryRepresentationImageName: return secondaryBehavior?.representation.image.rawValue
+        case Profile.Behavior.secondaryRepresentationImageName: return secondaryBehavior?.representation.image.name
         case Profile.Behavior.keywords: return keywords
-        case Profile.Behavior.groupName: return group.rawValue
+        case Profile.Behavior.groupName: return group.name
         default: return nil
         }
     }
