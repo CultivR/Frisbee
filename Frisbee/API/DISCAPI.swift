@@ -6,7 +6,11 @@
 //  Copyright © 2017 Cultivr. All rights reserved.
 //
 
-public struct DISCAPI: API {
+public struct DISCAPI {
+    public init() {}
+}
+
+extension DISCAPI: API {
     public static var baseURL: URL! {
         return Bundle.main.bundleURL
     }
@@ -17,15 +21,5 @@ public struct DISCAPI: API {
     
     public static var requestsUseContainerKeyPath: Bool {
         return true
-    }
-}
-
-public extension RawRepresentable where RawValue == String {
-    var name: String {
-        return rawValue
-    }
-    
-    init(name: String) {
-        self.init(rawValue: name)!
     }
 }
