@@ -14,3 +14,13 @@ public struct DISCAPI: API {
         return Bundle.main.bundleURL
     }
 }
+
+extension RawRepresentable where RawValue == String {
+    var name: String {
+        return rawValue
+    }
+    
+    init(name: String) {
+        self.init(rawValue: name)!
+    }
+}

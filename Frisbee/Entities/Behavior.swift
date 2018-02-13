@@ -10,16 +10,10 @@ public struct Behavior {
     public let name: String
     public let representation: Representation
     public let color: Color
-    
-    init(name: String, colorName: String, representationName: String, representationImageName: String) {
-        self.name = name
-        representation = .init(name: representationName, imageName: representationImageName)
-        color = .init(name: colorName)
-    }
 }
 
 public extension Behavior {
-    enum Color {
+    enum Color: String {
         case red
         case yellow
         case green
@@ -27,43 +21,42 @@ public extension Behavior {
     }
     
     struct Representation {
-        public enum Image {
-            case eagle
-            case parrot
-            case dove
-            case owl
-        }
-        
         public let name: String
         public let image: Image
-        
-        fileprivate init(name: String, imageName: String) {
-            self.name = name
-            image = .init(name: imageName)
-        }
     }
 }
 
-private extension Behavior.Color {
-    init!(name: String) {
-        switch name {
-        case "red": self = .red
-        case "yellow": self = .yellow
-        case "green": self = .green
-        case "blue": self = .blue
-        default: return nil
-        }
+public extension Behavior.Representation {
+    enum Image: String {
+        case eagle
+        case parrot
+        case dove
+        case owl
     }
 }
 
-private extension Behavior.Representation.Image {
-    init!(name: String) {
-        switch name {
-        case "eagle": self = .eagle
-        case "parrot": self = .parrot
-        case "dove": self = .dove
-        case "owl": self = .owl
-        default: return nil
-        }
+extension Behavior {
+    init(name: String, colorName: String, representationName: String, representationImageName: String) {
+        self.init(
+            name: name,
+            representation: .init(
+                name: representationName,
+                imageName: representationImageName
+            ),
+            color: .init(
+                name: colorName
+            )
+        )
+    }
+}
+
+private extension Behavior.Representation {
+    init(name: String, imageName: String) {
+        self.init(
+            name: name,
+            image: .init(
+                name: imageName
+            )
+        )
     }
 }

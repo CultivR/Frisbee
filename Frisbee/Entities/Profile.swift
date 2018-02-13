@@ -17,15 +17,6 @@ public struct Profile {
     public let company: String?
     public let traits: Traits
     public let behaviorID: Int
-    
-    private init(id: Int, name: String, jobTitle: String?, company: String?, traits: Traits, behaviorID: Int) {
-        self.id = id
-        self.name = name
-        self.jobTitle = jobTitle
-        self.company = company
-        self.traits = traits
-        self.behaviorID = behaviorID
-    }
 }
 
 extension Profile: Decodable {
@@ -55,17 +46,19 @@ extension Profile: Sqlable {
     static let conscientiousValue = Column("conscientiousValue", .integer)
     
     public init(row: ReadRow) throws {
-        id = try row.get(Profile.id)
-        name = try row.get(Profile.name)
-        jobTitle = try row.get(Profile.jobTitle)
-        company = try row.get(Profile.company)
-        behaviorID = try row.get(Profile.behaviorID)
-        
-        let dominantValue: Int = try row.get(Profile.dominantValue)
-        let interactiveValue: Int = try row.get(Profile.interactiveValue)
-        let supportiveValue: Int = try row.get(Profile.supportiveValue)
-        let conscientiousValue: Int = try row.get(Profile.conscientiousValue)
-        traits = Traits(dominantValue: dominantValue, interactiveValue: interactiveValue, supportiveValue: supportiveValue, conscientiousValue: conscientiousValue)
+        try self.init(
+            id: row.get(Profile.id),
+            name: row.get(Profile.name),
+            jobTitle: row.get(Profile.jobTitle),
+            company: row.get(Profile.company),
+            traits: .init(
+                dominantValue: row.get(Profile.dominantValue),
+                interactiveValue: row.get(Profile.interactiveValue),
+                supportiveValue: row.get(Profile.supportiveValue),
+                conscientiousValue: row.get(Profile.conscientiousValue)
+            ),
+            behaviorID: row.get(Profile.behaviorID)
+        )
     }
     
     public func valueForColumn(_ column: Column) -> SqlValue? {
@@ -92,6 +85,7 @@ public extension Profile {
     }
     
     struct Behavior {
+        public let id: Int
         public let primaryBehavior: Frisbee.Behavior
         public let secondaryBehavior: Frisbee.Behavior?
         public let keywords: String
@@ -110,48 +104,100 @@ extension Profile.Traits: Decodable {
     }
 }
 
-extension Profile.Behavior: Decodable {
-    public static func decode(_ json: Any) throws -> Profile.Behavior {
-        let primaryName: String = try json => "attributes" => "primary_trait"
-        let primaryColorName: String = try json => "attributes" => "primary_color"
-        let primaryRepresentationName: String = try json => "attributes" => "primary_name"
-        let primaryRepresentationImageName: String = try json => "attributes" => "primary_image"
-        let secondaryName: String = try json => "attributes" => "secondary_trait"
-        let secondaryColorName: String = try json => "attributes" => "secondary_color"
-        let secondaryRepresentationName: String = try json => "attributes" => "secondary_name"
-        let secondaryRepresentationImageName: String = try json => "attributes" => "secondary_image"
-        let keywords: String = try json => "attributes" => "keywords"
-        let groupName: String = try json => "attributes" => "group_type"
-        
-        let primaryBehavior = Frisbee.Behavior(name: primaryName, colorName: primaryColorName, representationName: primaryRepresentationName, representationImageName: primaryRepresentationImageName)
-        let secondaryBehavior = Frisbee.Behavior(name: secondaryName, colorName: secondaryColorName, representationName: secondaryRepresentationName, representationImageName: secondaryRepresentationImageName)
-        let group: Group = .init(name: groupName)
-
-        return Profile.Behavior(
-            primaryBehavior: primaryBehavior,
-            secondaryBehavior: secondaryBehavior,
-            keywords: keywords,
-            group: group
-        )
-    }
-}
-
-extension Profile.Behavior {
-    public enum Group {
+public extension Profile.Behavior {
+    enum Group: String {
         case singular
         case dual
     }
 }
 
-private extension Profile.Behavior.Group {
-    init!(name: String) {
-        switch name {
-        case "singular":
-            self = .singular
-        case "dual":
-            self = .dual
-        default:
-            return nil
+extension Profile.Behavior: Decodable {
+    public static func decode(_ json: Any) throws -> Profile.Behavior {
+        return try Profile.Behavior(
+            id: json => "id",
+            primaryName: json => "attributes" => "primary_trait",
+            primaryColorName: json => "attributes" => "primary_color",
+            primaryRepresentationName: json => "attributes" => "primary_name",
+            primaryRepresentationImageName: json => "attributes" => "primary_image",
+            secondaryName: json => "attributes" => "secondary_trait",
+            secondaryColorName: json => "attributes" => "secondary_color",
+            secondaryRepresentationName: json => "attributes" => "secondary_name",
+            secondaryRepresentationImageName: json => "attributes" => "secondary_image",
+            keywords: json => "attributes" => "keywords",
+            groupName: json => "attributes" => "group_type"
+        )
+    }
+}
+
+extension Profile.Behavior: Sqlable {
+    public static let tableLayout = [id, primaryName, primaryColorName, primaryRepresentationName, primaryRepresentationImageName, secondaryName, secondaryColorName, secondaryRepresentationName, secondaryRepresentationImageName, keywords]
+    
+    static let id = Column("id", .integer, PrimaryKey(autoincrement: false))
+    static let primaryName = Column("primaryName", .text)
+    static let primaryColorName = Column("primaryColorName", .text)
+    static let primaryRepresentationName = Column("primaryRepresentationName", .text)
+    static let primaryRepresentationImageName = Column("primaryRepresentationImageName", .text)
+    static let secondaryName = Column("secondaryName", .text)
+    static let secondaryColorName = Column("secondaryColorName", .text)
+    static let secondaryRepresentationName = Column("secondaryRepresentationName", .text)
+    static let secondaryRepresentationImageName = Column("secondaryRepresentationImageName", .text)
+    static let keywords = Column("keywords", .text)
+    static let groupName = Column("groupName", .text)
+    
+    public init(row: ReadRow) throws {
+        try self.init(
+            id: row.get(Profile.Behavior.id),
+            primaryName: row.get(Profile.Behavior.primaryName),
+            primaryColorName: row.get(Profile.Behavior.primaryColorName),
+            primaryRepresentationName: row.get(Profile.Behavior.primaryRepresentationName),
+            primaryRepresentationImageName: row.get(Profile.Behavior.primaryRepresentationImageName),
+            secondaryName: row.get(Profile.Behavior.secondaryName),
+            secondaryColorName: row.get(Profile.Behavior.secondaryColorName),
+            secondaryRepresentationName: row.get(Profile.Behavior.secondaryRepresentationName),
+            secondaryRepresentationImageName: row.get(Profile.Behavior.secondaryRepresentationImageName),
+            keywords: row.get(Profile.Behavior.keywords),
+            groupName: row.get(Profile.Behavior.groupName)
+        )
+    }
+    
+    public func valueForColumn(_ column: Column) -> SqlValue? {
+        switch column {
+        case Profile.Behavior.id: return id
+        case Profile.Behavior.primaryName: return primaryBehavior.name
+        case Profile.Behavior.primaryColorName: return primaryBehavior.color.rawValue
+        case Profile.Behavior.primaryRepresentationName: return primaryBehavior.representation.name
+        case Profile.Behavior.primaryRepresentationImageName: return primaryBehavior.representation.image.rawValue
+        case Profile.Behavior.secondaryName: return secondaryBehavior?.name
+        case Profile.Behavior.secondaryColorName: return secondaryBehavior?.color.rawValue
+        case Profile.Behavior.secondaryRepresentationName: return secondaryBehavior?.representation.name
+        case Profile.Behavior.secondaryRepresentationImageName: return secondaryBehavior?.representation.image.rawValue
+        case Profile.Behavior.keywords: return keywords
+        case Profile.Behavior.groupName: return group.rawValue
+        default: return nil
         }
+    }
+}
+
+private extension Profile.Behavior {
+    init(id: Int, primaryName: String, primaryColorName: String, primaryRepresentationName: String, primaryRepresentationImageName: String, secondaryName: String, secondaryColorName: String, secondaryRepresentationName: String, secondaryRepresentationImageName: String, keywords: String, groupName: String) {
+        self.init(
+            id: id,
+            primaryBehavior: .init(
+                name: primaryName,
+                colorName: primaryColorName,
+                representationName: primaryRepresentationName,
+                representationImageName: primaryRepresentationImageName)
+            ,
+            secondaryBehavior: .init(
+                name: secondaryName,
+                colorName: secondaryColorName,
+                representationName: secondaryRepresentationName,
+                representationImageName: secondaryRepresentationImageName
+            ),
+            keywords: keywords,
+            group: .init(
+                name: groupName
+            )
+        )
     }
 }
