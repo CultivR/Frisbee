@@ -17,6 +17,17 @@ public struct Profile {
     public let company: String?
     public let traits: Traits
     public let behaviorID: Int
+    
+    public func modifying(name: String, jobTitle: String?, company: String?) -> Profile {
+        return .init(
+            id: id,
+            name: name,
+            jobTitle: jobTitle,
+            company: company,
+            traits: traits,
+            behaviorID: behaviorID
+        )
+    }
 }
 
 extension Profile: Decodable {
