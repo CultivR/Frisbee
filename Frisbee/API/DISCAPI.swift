@@ -28,19 +28,7 @@ extension DISCAPI: API {
     }
     
     public static var baseURL: URL! {
-        return URL(string: "https://DISC.com/api/mobile")
-    }
-    
-    public static var pathsUseTrailingSlash: Bool {
-        return true
-    }
-    
-    public static var dateFormat: String? {
-        return "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
-    }
-    
-    public static var injectedScheme: String? {
-        return "http"
+        return Bundle.main.bundleURL
     }
 }
 

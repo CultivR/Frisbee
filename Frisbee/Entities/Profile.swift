@@ -16,35 +16,39 @@ public struct Profile {
     public let jobTitle: String?
     public let company: String?
     public let traits: Traits
+    public let behaviorID: Int
     
-    public init(id: Int, name: String, jobTitle: String?, company: String?, traits: Traits) {
+    private init(id: Int, name: String, jobTitle: String?, company: String?, traits: Traits, behaviorID: Int) {
         self.id = id
         self.name = name
         self.jobTitle = jobTitle
         self.company = company
         self.traits = traits
+        self.behaviorID = behaviorID
     }
 }
 
 extension Profile: Decodable {
     public static func decode(_ json: Any) throws -> Profile {
         return try Profile(
-            id: json => "id",
-            name: json => "name",
-            jobTitle: json => "job",
-            company: json => "company",
-            traits: json => "traits"
+            id: json => "attributes" => "id",
+            name: json => "attributes" => "name",
+            jobTitle: json => "attributes" => "job",
+            company: json => "attributes" => "company",
+            traits: json => "attributes" => "traits",
+            behaviorID: json => "relationships" => "behavior" => "data" => "id" as Int
         )
     }
 }
 
 extension Profile: Sqlable {
-    public static let tableLayout = [id, name, jobTitle, company, dominantValue, interactiveValue, supportiveValue, conscientiousValue]
+    public static let tableLayout = [id, name, jobTitle, company, dominantValue, interactiveValue, supportiveValue, conscientiousValue, behaviorID]
 
     static let id = Column("id", .integer, PrimaryKey(autoincrement: false))
     static let name = Column("name", .text)
     static let jobTitle = Column("jobTitle", .text)
     static let company = Column("company", .text)
+    static let behaviorID = Column("behaviorID", .integer)
     static let dominantValue = Column("dominantValue", .integer)
     static let interactiveValue = Column("interactiveValue", .integer)
     static let supportiveValue = Column("supportiveValue", .integer)
@@ -55,6 +59,7 @@ extension Profile: Sqlable {
         name = try row.get(Profile.name)
         jobTitle = try row.get(Profile.jobTitle)
         company = try row.get(Profile.company)
+        behaviorID = try row.get(Profile.behaviorID)
         
         let dominantValue: Int = try row.get(Profile.dominantValue)
         let interactiveValue: Int = try row.get(Profile.interactiveValue)
@@ -87,7 +92,10 @@ public extension Profile {
     }
     
     struct Behavior {
-        
+        public let primaryBehavior: Frisbee.Behavior
+        public let secondaryBehavior: Frisbee.Behavior?
+        public let keywords: String
+        public let group: Group
     }
 }
 
@@ -99,5 +107,51 @@ extension Profile.Traits: Decodable {
             supportiveValue: json => "supportive",
             conscientiousValue: json => "conscientious"
         )
+    }
+}
+
+extension Profile.Behavior: Decodable {
+    public static func decode(_ json: Any) throws -> Profile.Behavior {
+        let primaryName: String = try json => "attributes" => "primary_trait"
+        let primaryColorName: String = try json => "attributes" => "primary_color"
+        let primaryRepresentationName: String = try json => "attributes" => "primary_name"
+        let primaryRepresentationImageName: String = try json => "attributes" => "primary_image"
+        let secondaryName: String = try json => "attributes" => "secondary_trait"
+        let secondaryColorName: String = try json => "attributes" => "secondary_color"
+        let secondaryRepresentationName: String = try json => "attributes" => "secondary_name"
+        let secondaryRepresentationImageName: String = try json => "attributes" => "secondary_image"
+        let keywords: String = try json => "attributes" => "keywords"
+        let groupName: String = try json => "attributes" => "group_type"
+        
+        let primaryBehavior = Frisbee.Behavior(name: primaryName, colorName: primaryColorName, representationName: primaryRepresentationName, representationImageName: primaryRepresentationImageName)
+        let secondaryBehavior = Frisbee.Behavior(name: secondaryName, colorName: secondaryColorName, representationName: secondaryRepresentationName, representationImageName: secondaryRepresentationImageName)
+        let group: Group = .init(name: groupName)
+
+        return Profile.Behavior(
+            primaryBehavior: primaryBehavior,
+            secondaryBehavior: secondaryBehavior,
+            keywords: keywords,
+            group: group
+        )
+    }
+}
+
+extension Profile.Behavior {
+    public enum Group {
+        case singular
+        case dual
+    }
+}
+
+private extension Profile.Behavior.Group {
+    init!(name: String) {
+        switch name {
+        case "singular":
+            self = .singular
+        case "dual":
+            self = .dual
+        default:
+            return nil
+        }
     }
 }
