@@ -6,12 +6,17 @@
 //  Copyright © 2017 Cultivr. All rights reserved.
 //
 
-import Emissary
-import SwiftTask
-
 public struct DISCAPI: API {
     public static var baseURL: URL! {
         return Bundle.main.bundleURL
+    }
+    
+    public static var containerKeyPath: KeyPath? {
+        return "data"
+    }
+    
+    public static var requestsUseContainerKeyPath: Bool {
+        return true
     }
 }
 
