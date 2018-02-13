@@ -10,6 +10,7 @@ public struct Behavior {
     public let name: String
     public let representation: Representation
     public let color: Color
+    public let keywords: String
 }
 
 public extension Behavior {
@@ -36,7 +37,7 @@ public extension Behavior.Representation {
 }
 
 extension Behavior {
-    init(name: String, colorName: String, representationName: String, representationImageName: String) {
+    init(name: String, colorName: String, representationName: String, representationImageName: String, keywords: String) {
         self.init(
             name: name,
             representation: .init(
@@ -45,7 +46,8 @@ extension Behavior {
             ),
             color: .init(
                 name: colorName
-            )
+            ),
+            keywords: keywords
         )
     }
 }
