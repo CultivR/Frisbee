@@ -20,7 +20,7 @@ public struct DISCAPI: API {
     }
 }
 
-extension RawRepresentable where RawValue == String {
+public extension RawRepresentable where RawValue == String {
     var name: String {
         return rawValue
     }
