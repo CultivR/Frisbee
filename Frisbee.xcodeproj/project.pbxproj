@@ -16,14 +16,7 @@
 		1735AD0C1F9BBD7800F3B86C /* Decodable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1735AD061F9BBD7700F3B86C /* Decodable.framework */; };
 		1735AD0D1F9BBD7800F3B86C /* SwiftTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1735AD071F9BBD7700F3B86C /* SwiftTask.framework */; };
 		1735AD121F9BC32800F3B86C /* DISCAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17688C1E1F3CF6FA00CF59B6 /* DISCAPIError.swift */; };
-		1735AD141F9BC36900F3B86C /* DISCCredential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17688C1B1F3CF61C00CF59B6 /* DISCCredential.swift */; };
 		1735AD161F9BC93C00F3B86C /* DISCAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17688C271F3CF9AE00CF59B6 /* DISCAPI.swift */; };
-		1735AD171F9BC9C200F3B86C /* DISCSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17688C241F3CF8FA00CF59B6 /* DISCSession.swift */; };
-		1735AD191F9BCD8700F3B86C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1735AD181F9BCD8700F3B86C /* User.swift */; };
-		1735AD1B1F9BD7FC00F3B86C /* DISCAPI+User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1735AD1A1F9BD7FC00F3B86C /* DISCAPI+User.swift */; };
-		1735AD1D1F9BDA2E00F3B86C /* DISCSessionAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1735AD1C1F9BDA2E00F3B86C /* DISCSessionAPI.swift */; };
-		1735AD1E1F9BDA3E00F3B86C /* DISCSessionAPI+Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17688C2B1F3CFBE300CF59B6 /* DISCSessionAPI+Authentication.swift */; };
-		1735AD201F9BFB8F00F3B86C /* Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1735AD1F1F9BFB8F00F3B86C /* Registration.swift */; };
 		17752DFC1FBBACF500F81A48 /* FrisbeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17752DFB1FBBACF500F81A48 /* FrisbeeTests.swift */; };
 		177687CE1FBFB046009463B7 /* Behavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177687CD1FBFB046009463B7 /* Behavior.swift */; };
 		177687E91FCE0C5B009463B7 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177687E81FCE0C5B009463B7 /* Profile.swift */; };
@@ -53,15 +46,8 @@
 		1735AD051F9BBD7700F3B86C /* Province.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Province.framework; path = Carthage/Build/iOS/Province.framework; sourceTree = "<group>"; };
 		1735AD061F9BBD7700F3B86C /* Decodable.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Decodable.framework; path = Carthage/Build/iOS/Decodable.framework; sourceTree = "<group>"; };
 		1735AD071F9BBD7700F3B86C /* SwiftTask.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftTask.framework; path = Carthage/Build/iOS/SwiftTask.framework; sourceTree = "<group>"; };
-		1735AD181F9BCD8700F3B86C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		1735AD1A1F9BD7FC00F3B86C /* DISCAPI+User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DISCAPI+User.swift"; sourceTree = "<group>"; };
-		1735AD1C1F9BDA2E00F3B86C /* DISCSessionAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DISCSessionAPI.swift; sourceTree = "<group>"; };
-		1735AD1F1F9BFB8F00F3B86C /* Registration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration.swift; sourceTree = "<group>"; };
-		17688C1B1F3CF61C00CF59B6 /* DISCCredential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DISCCredential.swift; sourceTree = "<group>"; };
 		17688C1E1F3CF6FA00CF59B6 /* DISCAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DISCAPIError.swift; sourceTree = "<group>"; };
-		17688C241F3CF8FA00CF59B6 /* DISCSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DISCSession.swift; sourceTree = "<group>"; };
 		17688C271F3CF9AE00CF59B6 /* DISCAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DISCAPI.swift; sourceTree = "<group>"; };
-		17688C2B1F3CFBE300CF59B6 /* DISCSessionAPI+Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DISCSessionAPI+Authentication.swift"; sourceTree = "<group>"; };
 		17752DF91FBBACF400F81A48 /* FrisbeeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FrisbeeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		17752DFB1FBBACF500F81A48 /* FrisbeeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrisbeeTests.swift; sourceTree = "<group>"; };
 		17752DFD1FBBACF500F81A48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -131,7 +117,6 @@
 				17688C181F3CEFF600CF59B6 /* API */,
 				17688C191F3CF20D00CF59B6 /* Entities */,
 				1735ACFB1F9BBCC800F3B86C /* Resources */,
-				17688C1A1F3CF3B100CF59B6 /* Session */,
 			);
 			path = Frisbee;
 			sourceTree = "<group>";
@@ -140,7 +125,6 @@
 			isa = PBXGroup;
 			children = (
 				17688C271F3CF9AE00CF59B6 /* DISCAPI.swift */,
-				1735AD1A1F9BD7FC00F3B86C /* DISCAPI+User.swift */,
 				17688C1E1F3CF6FA00CF59B6 /* DISCAPIError.swift */,
 			);
 			path = API;
@@ -152,23 +136,10 @@
 				179352E41FDF5A6800A1B666 /* Answer.swift */,
 				177687CD1FBFB046009463B7 /* Behavior.swift */,
 				177687E81FCE0C5B009463B7 /* Profile.swift */,
-				1735AD1F1F9BFB8F00F3B86C /* Registration.swift */,
 				179352E61FDF5A8200A1B666 /* Question.swift */,
 				179352E81FDF5B0300A1B666 /* Quiz.swift */,
-				1735AD181F9BCD8700F3B86C /* User.swift */,
 			);
 			path = Entities;
-			sourceTree = "<group>";
-		};
-		17688C1A1F3CF3B100CF59B6 /* Session */ = {
-			isa = PBXGroup;
-			children = (
-				17688C1B1F3CF61C00CF59B6 /* DISCCredential.swift */,
-				17688C241F3CF8FA00CF59B6 /* DISCSession.swift */,
-				1735AD1C1F9BDA2E00F3B86C /* DISCSessionAPI.swift */,
-				17688C2B1F3CFBE300CF59B6 /* DISCSessionAPI+Authentication.swift */,
-			);
-			path = Session;
 			sourceTree = "<group>";
 		};
 		17752DFA1FBBACF500F81A48 /* FrisbeeTests */ = {
@@ -308,17 +279,10 @@
 				1735AD161F9BC93C00F3B86C /* DISCAPI.swift in Sources */,
 				177687E91FCE0C5B009463B7 /* Profile.swift in Sources */,
 				1735AD121F9BC32800F3B86C /* DISCAPIError.swift in Sources */,
-				1735AD1E1F9BDA3E00F3B86C /* DISCSessionAPI+Authentication.swift in Sources */,
 				179352E71FDF5A8200A1B666 /* Question.swift in Sources */,
-				1735AD191F9BCD8700F3B86C /* User.swift in Sources */,
-				1735AD201F9BFB8F00F3B86C /* Registration.swift in Sources */,
 				179352E51FDF5A6800A1B666 /* Answer.swift in Sources */,
-				1735AD1D1F9BDA2E00F3B86C /* DISCSessionAPI.swift in Sources */,
-				1735AD141F9BC36900F3B86C /* DISCCredential.swift in Sources */,
 				179352E91FDF5B0300A1B666 /* Quiz.swift in Sources */,
-				1735AD171F9BC9C200F3B86C /* DISCSession.swift in Sources */,
 				177687CE1FBFB046009463B7 /* Behavior.swift in Sources */,
-				1735AD1B1F9BD7FC00F3B86C /* DISCAPI+User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
