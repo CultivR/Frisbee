@@ -7,8 +7,10 @@
 //
 
 public extension Behavior {
-    struct Representation {
-        public let name: String
-        public let image: Image
+    enum Representation: String {
+        case eagle
+        case parrot
+        case dove
+        case owl
     }
 }

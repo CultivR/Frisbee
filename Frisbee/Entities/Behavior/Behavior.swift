@@ -13,28 +13,16 @@ public struct Behavior {
 }
 
 extension Behavior {
-    init(name: String, colorName: String, representationName: String, representationImageName: String) {
+    init(name: String, colorName: String, representationName: String) {
         self.init(
             value: .init(
                 name: name
             ),
             representation: .init(
-                name: representationName,
-                imageName: representationImageName
+                name: representationName
             ),
             color: .init(
                 name: colorName
-            )
-        )
-    }
-}
-
-private extension Behavior.Representation {
-    init(name: String, imageName: String) {
-        self.init(
-            name: name,
-            image: .init(
-                name: imageName
             )
         )
     }
