@@ -8,9 +8,9 @@
 
 public extension Behavior {
     enum Representation: String {
-        case eagle
-        case parrot
-        case dove
-        case owl
+        case eagle = "Eagle"
+        case parrot = "Parrot"
+        case dove = "Dove"
+        case owl = "Owl"
     }
 }
