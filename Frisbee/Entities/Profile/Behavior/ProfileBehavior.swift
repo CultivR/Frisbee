@@ -84,21 +84,29 @@ extension Profile.Behavior: Sqlable {
 }
 
 private extension Profile.Behavior {
-    init(id: Int, primaryName: String, primaryColorName: String, primaryRepresentationName: String, primaryRepresentationImageName: String, secondaryName: String, secondaryColorName: String, secondaryRepresentationName: String, secondaryRepresentationImageName: String, keywords: String, groupName: String) {
+    init(id: Int, primaryName: String, primaryColorName: String, primaryRepresentationName: String, primaryRepresentationImageName: String, secondaryName: String?, secondaryColorName: String?, secondaryRepresentationName: String?, secondaryRepresentationImageName: String?, keywords: String, groupName: String) {
         self.init(
             id: id,
             primaryBehavior: .init(
                 name: primaryName,
                 colorName: primaryColorName,
                 representationName: primaryRepresentationName,
-                representationImageName: primaryRepresentationImageName)
-            ,
-            secondaryBehavior: .init(
-                name: secondaryName,
-                colorName: secondaryColorName,
-                representationName: secondaryRepresentationName,
-                representationImageName: secondaryRepresentationImageName
+                representationImageName: primaryRepresentationImageName
             ),
+            secondaryBehavior: secondaryName.flatMap { name in
+                secondaryColorName.flatMap { colorName in
+                    secondaryRepresentationName.flatMap { representationName in
+                        secondaryRepresentationImageName.map { representationImageName in
+                            .init(
+                                name: name,
+                                colorName: colorName,
+                                representationName: representationName,
+                                representationImageName: representationImageName
+                            )
+                        }
+                    }
+                }
+            },
             keywords: keywords,
             group: .init(
                 name: groupName
