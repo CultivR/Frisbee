@@ -6,7 +6,7 @@
 //  Copyright © 2018 Cultivr. All rights reserved.
 //
 
-extension RawRepresentable where RawValue == String {
+public extension RawRepresentable where RawValue == String {
     var name: String {
         return rawValue
     }
