@@ -9,9 +9,10 @@
 public typealias BehaviorsTask = Task<Float, [Profile.Behavior], Reason>
 
 public extension DISCAPI {
-    func fetchBehaviors() -> BehaviorsTask {
+    func fetchBehaviors(group: Profile.Behavior.Group? = nil) -> BehaviorsTask {
         let path = Profile.Behavior.pathForBehavior(withID: nil)
-        return request(Resource(path: path, method: .get))
+        let queryParameters = parameters(group: group)
+        return request(Resource(path: path, queryParameters: queryParameters, method: .get))
     }
 }
 
@@ -28,4 +29,11 @@ extension Profile.Behavior {
         }
         return path
     }
+}
+
+private func parameters(group: Profile.Behavior.Group?) -> [(String, String)]? {
+    guard let group = group else { return nil }
+    return [
+        ("group_type", group.name)
+    ]
 }
