@@ -31,6 +31,7 @@
 		177687E91FCE0C5B009463B7 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177687E81FCE0C5B009463B7 /* Profile.swift */; };
 		179352E51FDF5A6800A1B666 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179352E41FDF5A6800A1B666 /* Answer.swift */; };
 		179352E71FDF5A8200A1B666 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179352E61FDF5A8200A1B666 /* Question.swift */; };
+		179D6C9320356EB800D0D072 /* DISCAPI+Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179D6C9220356EB800D0D072 /* DISCAPI+Question.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		177687E81FCE0C5B009463B7 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		179352E41FDF5A6800A1B666 /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
 		179352E61FDF5A8200A1B666 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		179D6C9220356EB800D0D072 /* DISCAPI+Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DISCAPI+Question.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +201,7 @@
 			children = (
 				17688C271F3CF9AE00CF59B6 /* DISCAPI.swift */,
 				17537DEB2033AE6A0095E477 /* DISCAPI+Behavior.swift */,
+				179D6C9220356EB800D0D072 /* DISCAPI+Question.swift */,
 				17688C1E1F3CF6FA00CF59B6 /* DISCAPIError.swift */,
 			);
 			path = API;
@@ -349,6 +352,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17537DE020335E6E0095E477 /* ProfileBehavior.swift in Sources */,
+				179D6C9320356EB800D0D072 /* DISCAPI+Question.swift in Sources */,
 				17537DDE20335E1D0095E477 /* Dependencies.swift in Sources */,
 				17537DD420335CB70095E477 /* Representation.swift in Sources */,
 				1735AD161F9BC93C00F3B86C /* DISCAPI.swift in Sources */,
