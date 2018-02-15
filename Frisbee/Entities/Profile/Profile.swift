@@ -35,12 +35,12 @@ extension Profile: Sqlable {
     static let name = Column("name", .text)
     static let jobTitle = Column("jobTitle", .text)
     static let company = Column("company", .text)
-    static let behaviorID = Column("behaviorID", .integer)
     static let dominantValue = Column("dominantValue", .integer)
     static let interactiveValue = Column("interactiveValue", .integer)
     static let supportiveValue = Column("supportiveValue", .integer)
     static let conscientiousValue = Column("conscientiousValue", .integer)
-    
+    static let behaviorID = Column("behaviorID", .integer)
+
     public init(row: ReadRow) throws {
         try self.init(
             id: row.get(Profile.id),
@@ -67,6 +67,7 @@ extension Profile: Sqlable {
         case Profile.interactiveValue: return traits.interactiveValue
         case Profile.supportiveValue: return traits.supportiveValue
         case Profile.conscientiousValue: return traits.conscientiousValue
+        case Profile.behaviorID: return behaviorID
         default: return nil
         }
     }
