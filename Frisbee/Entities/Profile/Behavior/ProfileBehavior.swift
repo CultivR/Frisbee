@@ -33,7 +33,7 @@ extension Profile.Behavior: Decodable {
 }
 
 extension Profile.Behavior: Sqlable {
-    public static let tableLayout = [id, primaryName, primaryColorName, primaryRepresentationName, secondaryName, secondaryColorName, secondaryRepresentationName, keywords]
+    public static let tableLayout = [id, primaryName, primaryColorName, primaryRepresentationName, secondaryName, secondaryColorName, secondaryRepresentationName, keywords, groupName]
     
     static let id = Column("id", .integer, PrimaryKey(autoincrement: false))
     static let primaryName = Column("primaryName", .text)
