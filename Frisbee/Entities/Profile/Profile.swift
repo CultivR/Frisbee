@@ -33,8 +33,8 @@ extension Profile: Sqlable {
 
     static let id = Column("id", .integer, PrimaryKey(autoincrement: false))
     static let name = Column("name", .text)
-    static let jobTitle = Column("jobTitle", .text)
-    static let company = Column("company", .text)
+    static let jobTitle = Column("jobTitle", .nullable(.text))
+    static let company = Column("company", .nullable(.text))
     static let dominantValue = Column("dominantValue", .integer)
     static let interactiveValue = Column("interactiveValue", .integer)
     static let supportiveValue = Column("supportiveValue", .integer)
