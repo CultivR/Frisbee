@@ -1,5 +1,5 @@
 //
-//  Name.swift
+//  Representation.swift
 //  Frisbee
 //
 //  Created by Jordan Kay on 2/13/18.
@@ -7,10 +7,8 @@
 //
 
 public extension Behavior {
-    enum Value: String {
-        case dominant
-        case interactive
-        case supportive
-        case conscientious
+    struct Representation {
+        public let name: String
+        public let image: Image
     }
 }

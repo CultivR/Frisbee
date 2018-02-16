@@ -12,6 +12,13 @@ public extension Profile {
         public let interactiveValue: Int
         public let supportiveValue: Int
         public let conscientiousValue: Int
+        
+        public init(dominantValue: Int, interactiveValue: Int, supportiveValue: Int, conscientiousValue: Int) {
+            self.dominantValue = dominantValue
+            self.interactiveValue = interactiveValue
+            self.supportiveValue = supportiveValue
+            self.conscientiousValue = conscientiousValue
+        }
     }
 }
 

@@ -9,7 +9,7 @@
 public extension Question {
     struct Answer {
         public let text: String
-        public let value: Behavior.Value
+        public let value: Behavior.Trait
     }
 }
 
