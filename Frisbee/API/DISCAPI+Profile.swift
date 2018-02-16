@@ -7,21 +7,17 @@
 //
 
 public typealias ProfileTask = Task<Float, Profile, Reason>
+public typealias ProfilesTask = Task<Float, [Profile], Reason>
 
 public extension DISCAPI {
-    func createProfile() -> ProfileTask {
+    func createProfile(with traits: Profile.Traits) -> ProfileTask {
         return .init(
             value: .init(
                 id: .randomID,
                 name: nil,
                 jobTitle: nil,
                 company: nil,
-                traits: .init(
-                    dominantValue: 10,
-                    interactiveValue: 10,
-                    supportiveValue: 0,
-                    conscientiousValue: 0
-                ),
+                traits: traits,
                 behaviorID: 3
             )
         )

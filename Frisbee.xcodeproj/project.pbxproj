@@ -17,13 +17,14 @@
 		1735AD0D1F9BBD7800F3B86C /* SwiftTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1735AD071F9BBD7700F3B86C /* SwiftTask.framework */; };
 		1735AD121F9BC32800F3B86C /* DISCAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17688C1E1F3CF6FA00CF59B6 /* DISCAPIError.swift */; };
 		1735AD161F9BC93C00F3B86C /* DISCAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17688C271F3CF9AE00CF59B6 /* DISCAPI.swift */; };
+		1737A57D203741B60079856E /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1737A57C203741B60079856E /* Image.swift */; };
 		17537DCF20335C3E0095E477 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17537DCE20335C3E0095E477 /* Color.swift */; };
 		17537DD420335CB70095E477 /* Representation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17537DD320335CB70095E477 /* Representation.swift */; };
 		17537DDB20335DBF0095E477 /* Traits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17537DDA20335DBF0095E477 /* Traits.swift */; };
 		17537DDE20335E1D0095E477 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17537DDD20335E1D0095E477 /* Dependencies.swift */; };
 		17537DE020335E6E0095E477 /* ProfileBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17537DD620335CF60095E477 /* ProfileBehavior.swift */; };
 		17537DE220335EA80095E477 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17537DE120335EA70095E477 /* Group.swift */; };
-		17537DE62033629A0095E477 /* Value.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17537DE52033629A0095E477 /* Value.swift */; };
+		17537DE62033629A0095E477 /* Trait.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17537DE52033629A0095E477 /* Trait.swift */; };
 		17537DEA2033A9A90095E477 /* Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17537DE92033A9A90095E477 /* Name.swift */; };
 		17537DEC2033AE6A0095E477 /* DISCAPI+Behavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17537DEB2033AE6A0095E477 /* DISCAPI+Behavior.swift */; };
 		17752DFC1FBBACF500F81A48 /* FrisbeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17752DFB1FBBACF500F81A48 /* FrisbeeTests.swift */; };
@@ -57,13 +58,14 @@
 		1735AD051F9BBD7700F3B86C /* Province.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Province.framework; path = Carthage/Build/iOS/Province.framework; sourceTree = "<group>"; };
 		1735AD061F9BBD7700F3B86C /* Decodable.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Decodable.framework; path = Carthage/Build/iOS/Decodable.framework; sourceTree = "<group>"; };
 		1735AD071F9BBD7700F3B86C /* SwiftTask.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftTask.framework; path = Carthage/Build/iOS/SwiftTask.framework; sourceTree = "<group>"; };
+		1737A57C203741B60079856E /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		17537DCE20335C3E0095E477 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		17537DD320335CB70095E477 /* Representation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Representation.swift; sourceTree = "<group>"; };
 		17537DD620335CF60095E477 /* ProfileBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileBehavior.swift; sourceTree = "<group>"; };
 		17537DDA20335DBF0095E477 /* Traits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Traits.swift; sourceTree = "<group>"; };
 		17537DDD20335E1D0095E477 /* Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
 		17537DE120335EA70095E477 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
-		17537DE52033629A0095E477 /* Value.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Value.swift; sourceTree = "<group>"; };
+		17537DE52033629A0095E477 /* Trait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trait.swift; sourceTree = "<group>"; };
 		17537DE92033A9A90095E477 /* Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Name.swift; sourceTree = "<group>"; };
 		17537DEB2033AE6A0095E477 /* DISCAPI+Behavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DISCAPI+Behavior.swift"; sourceTree = "<group>"; };
 		17688C1E1F3CF6FA00CF59B6 /* DISCAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DISCAPIError.swift; sourceTree = "<group>"; };
@@ -133,13 +135,22 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		1737A57B203741940079856E /* Representation */ = {
+			isa = PBXGroup;
+			children = (
+				1737A57C203741B60079856E /* Image.swift */,
+				17537DD320335CB70095E477 /* Representation.swift */,
+			);
+			path = Representation;
+			sourceTree = "<group>";
+		};
 		17537DD020335C6C0095E477 /* Behavior */ = {
 			isa = PBXGroup;
 			children = (
 				177687CD1FBFB046009463B7 /* Behavior.swift */,
 				17537DCE20335C3E0095E477 /* Color.swift */,
-				17537DD320335CB70095E477 /* Representation.swift */,
-				17537DE52033629A0095E477 /* Value.swift */,
+				17537DE52033629A0095E477 /* Trait.swift */,
+				1737A57B203741940079856E /* Representation */,
 			);
 			path = Behavior;
 			sourceTree = "<group>";
@@ -370,10 +381,11 @@
 				179352E71FDF5A8200A1B666 /* Question.swift in Sources */,
 				17537DEC2033AE6A0095E477 /* DISCAPI+Behavior.swift in Sources */,
 				17864A9F2035FDF500357C63 /* DISCAPI+Profile.swift in Sources */,
+				1737A57D203741B60079856E /* Image.swift in Sources */,
 				17537DEA2033A9A90095E477 /* Name.swift in Sources */,
 				179352E51FDF5A6800A1B666 /* Answer.swift in Sources */,
 				17537DCF20335C3E0095E477 /* Color.swift in Sources */,
-				17537DE62033629A0095E477 /* Value.swift in Sources */,
+				17537DE62033629A0095E477 /* Trait.swift in Sources */,
 				177687CE1FBFB046009463B7 /* Behavior.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
