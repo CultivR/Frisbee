@@ -30,6 +30,7 @@
 		17752DFC1FBBACF500F81A48 /* FrisbeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17752DFB1FBBACF500F81A48 /* FrisbeeTests.swift */; };
 		177687CE1FBFB046009463B7 /* Behavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177687CD1FBFB046009463B7 /* Behavior.swift */; };
 		177687E91FCE0C5B009463B7 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177687E81FCE0C5B009463B7 /* Profile.swift */; };
+		177C9E672037C4E100FE9B8D /* DISCAPI+Me.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177C9E662037C4E100FE9B8D /* DISCAPI+Me.swift */; };
 		17864A9F2035FDF500357C63 /* DISCAPI+Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17864A9E2035FDF500357C63 /* DISCAPI+Profile.swift */; };
 		17864AA12035FFF300357C63 /* ID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17864AA02035FFF300357C63 /* ID.swift */; };
 		179352E51FDF5A6800A1B666 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179352E41FDF5A6800A1B666 /* Answer.swift */; };
@@ -75,6 +76,7 @@
 		17752DFD1FBBACF500F81A48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		177687CD1FBFB046009463B7 /* Behavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Behavior.swift; sourceTree = "<group>"; };
 		177687E81FCE0C5B009463B7 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		177C9E662037C4E100FE9B8D /* DISCAPI+Me.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DISCAPI+Me.swift"; sourceTree = "<group>"; };
 		17864A9E2035FDF500357C63 /* DISCAPI+Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DISCAPI+Profile.swift"; sourceTree = "<group>"; };
 		17864AA02035FFF300357C63 /* ID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID.swift; sourceTree = "<group>"; };
 		179352E41FDF5A6800A1B666 /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 			children = (
 				17688C271F3CF9AE00CF59B6 /* DISCAPI.swift */,
 				17537DEB2033AE6A0095E477 /* DISCAPI+Behavior.swift */,
+				177C9E662037C4E100FE9B8D /* DISCAPI+Me.swift */,
 				17864A9E2035FDF500357C63 /* DISCAPI+Profile.swift */,
 				179D6C9220356EB800D0D072 /* DISCAPI+Question.swift */,
 				17688C1E1F3CF6FA00CF59B6 /* DISCAPIError.swift */,
@@ -381,6 +384,7 @@
 				179352E71FDF5A8200A1B666 /* Question.swift in Sources */,
 				17537DEC2033AE6A0095E477 /* DISCAPI+Behavior.swift in Sources */,
 				17864A9F2035FDF500357C63 /* DISCAPI+Profile.swift in Sources */,
+				177C9E672037C4E100FE9B8D /* DISCAPI+Me.swift in Sources */,
 				1737A57D203741B60079856E /* Image.swift in Sources */,
 				17537DEA2033A9A90095E477 /* Name.swift in Sources */,
 				179352E51FDF5A6800A1B666 /* Answer.swift in Sources */,
