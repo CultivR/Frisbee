@@ -19,6 +19,10 @@ public extension Profile {
             self.supportiveValue = supportiveValue
             self.conscientiousValue = conscientiousValue
         }
+        
+        public init() {
+            self.init(dominantValue: 0, interactiveValue: 0, supportiveValue: 0, conscientiousValue: 0)
+        }
     }
 }
 

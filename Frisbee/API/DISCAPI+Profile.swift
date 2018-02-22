@@ -10,40 +10,27 @@ public typealias ProfileTask = Task<Float, Profile, Reason>
 public typealias ProfilesTask = Task<Float, [Profile], Reason>
 
 public extension DISCAPI {
-    func createProfile(with traits: Profile.Traits) -> ProfileTask {
+    func createProfile(name: String?, company: String?, jobTitle: String?, traits: Profile.Traits) -> ProfileTask {
         return .init(
             value: .init(
                 id: .randomID,
-                name: nil,
-                jobTitle: nil,
-                company: nil,
+                name: name,
+                company: company,
+                jobTitle: jobTitle,
                 traits: traits,
                 behaviorID: 3
             )
         )
     }
     
-    func update(_ profile: Profile, name: String, jobTitle: String?, company: String?) -> ProfileTask {
+    func update(_ profile: Profile, name: String?, company: String?, jobTitle: String?, traits: Profile.Traits?) -> ProfileTask {
         return .init(
             value: .init(
                 id: profile.id,
-                name: name,
-                jobTitle: jobTitle,
-                company: company,
-                traits: profile.traits,
-                behaviorID: profile.behaviorID
-            )
-        )
-    }
-    
-    func update(_ profile: Profile, traits: Profile.Traits) -> ProfileTask {
-        return .init(
-            value: .init(
-                id: profile.id,
-                name: profile.name,
-                jobTitle: profile.jobTitle,
-                company: profile.company,
-                traits: traits,
+                name: name ?? profile.name,
+                company: company ?? profile.company,
+                jobTitle: jobTitle ?? profile.jobTitle,
+                traits: traits ?? profile.traits,
                 behaviorID: profile.behaviorID
             )
         )
