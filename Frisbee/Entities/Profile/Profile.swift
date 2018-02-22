@@ -9,8 +9,8 @@
 public struct Profile {
     public let id: Int
     public let name: String?
-    public let jobTitle: String?
     public let company: String?
+    public let jobTitle: String?
     public let traits: Traits
     public let behaviorID: Int
 }
@@ -20,8 +20,8 @@ extension Profile: Decodable {
         return try Profile(
             id: json => "id",
             name: json => "attributes" => "name",
-            jobTitle: json => "attributes" => "job",
             company: json => "attributes" => "company",
+            jobTitle: json => "attributes" => "job",
             traits: json => "attributes" => "traits",
             behaviorID: json => "relationships" => "behavior" => "data" => "id" as Int
         )
@@ -29,12 +29,12 @@ extension Profile: Decodable {
 }
 
 extension Profile: Sqlable {
-    public static let tableLayout = [id, name, jobTitle, company, dominantValue, interactiveValue, supportiveValue, conscientiousValue, behaviorID]
+    public static let tableLayout = [id, name, company, jobTitle, dominantValue, interactiveValue, supportiveValue, conscientiousValue, behaviorID]
 
     static let id = Column("id", .integer, PrimaryKey(autoincrement: false))
     static let name = Column("name", .text)
-    static let jobTitle = Column("jobTitle", .nullable(.text))
     static let company = Column("company", .nullable(.text))
+    static let jobTitle = Column("jobTitle", .nullable(.text))
     static let dominantValue = Column("dominantValue", .integer)
     static let interactiveValue = Column("interactiveValue", .integer)
     static let supportiveValue = Column("supportiveValue", .integer)
@@ -45,8 +45,8 @@ extension Profile: Sqlable {
         try self.init(
             id: row.get(Profile.id),
             name: row.get(Profile.name),
-            jobTitle: row.get(Profile.jobTitle),
             company: row.get(Profile.company),
+            jobTitle: row.get(Profile.jobTitle),
             traits: .init(
                 dominantValue: row.get(Profile.dominantValue),
                 interactiveValue: row.get(Profile.interactiveValue),
@@ -61,8 +61,8 @@ extension Profile: Sqlable {
         switch column {
         case Profile.id: return id
         case Profile.name: return name
-        case Profile.jobTitle: return jobTitle
         case Profile.company: return company
+        case Profile.jobTitle: return jobTitle
         case Profile.dominantValue: return traits.dominantValue
         case Profile.interactiveValue: return traits.interactiveValue
         case Profile.supportiveValue: return traits.supportiveValue
