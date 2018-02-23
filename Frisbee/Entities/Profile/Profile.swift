@@ -29,9 +29,9 @@ extension Profile: Decodable {
 }
 
 extension Profile: Sqlable {
+    public static let id = Column("id", .integer, PrimaryKey(autoincrement: false))
     public static let tableLayout = [id, name, company, jobTitle, dominantValue, interactiveValue, supportiveValue, conscientiousValue, behaviorID]
-
-    static let id = Column("id", .integer, PrimaryKey(autoincrement: false))
+    
     static let name = Column("name", .text)
     static let company = Column("company", .nullable(.text))
     static let jobTitle = Column("jobTitle", .nullable(.text))
