@@ -18,7 +18,7 @@ public extension DISCAPI {
                 company: company,
                 jobTitle: jobTitle,
                 traits: traits,
-                behaviorID: 3
+                behaviorID: 2
             )
         )
     }

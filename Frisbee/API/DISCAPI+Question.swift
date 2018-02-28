@@ -11,7 +11,7 @@ public typealias QuestionsTask = Task<Float, [Question], Reason>
 public extension DISCAPI {
     func fetchQuestions() -> QuestionsTask {
         let path = Question.path
-        return request(Resource(path: path, method: .get))
+        return request(containedResource(path: path, method: .get))
     }
 }
 

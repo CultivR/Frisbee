@@ -18,8 +18,4 @@ extension DISCAPI: API {
     public static var containerKeyPath: KeyPath? {
         return "data"
     }
-    
-    public static var requestsUseContainerKeyPath: Bool {
-        return true
-    }
 }
