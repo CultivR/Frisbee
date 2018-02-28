@@ -7,7 +7,7 @@
 //
 
 public typealias BehaviorTask = Task<Float, Profile.Behavior, Reason>
-public typealias BehaviorsTask = Task<Float, [Profile.Behavior], Reason>
+public typealias BehaviorsTask = Task<Float, [Profile.Behavior.Base], Reason>
 
 public extension DISCAPI {
     func fetchBehavior(withID id: Int) -> BehaviorTask {

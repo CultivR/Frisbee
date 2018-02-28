@@ -8,11 +8,11 @@
 
 public extension Profile.Behavior {
     struct Content {
-        let id: Int
-        let cardNumber: Int
-        let subtitle: String
-        let text: String
-        let behaviorID: Int
+        public let id: Int
+        public let cardNumber: Int
+        public let subtitle: String
+        public let text: String
+        public let behaviorID: Int
     }
 }
 
