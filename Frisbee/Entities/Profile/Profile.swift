@@ -23,7 +23,7 @@ extension Profile: Decodable {
             company: json => "attributes" => "company",
             jobTitle: json => "attributes" => "job",
             traits: json => "attributes" => "traits",
-            behaviorID: json => "relationships" => "behavior" => "data" => "id" as Int
+            behaviorID: json => "relationships" => "behavior" => "id"
         )
     }
 }

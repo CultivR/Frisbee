@@ -23,7 +23,7 @@ extension Profile.Behavior.Content: Decodable {
             cardNumber: json => "attributes" => "card",
             subtitle: json => "attributes" => "subtitle",
             text: json => "attributes" => "text",
-            behaviorID: json => "relationships" => "behavior" => "data" => "id"
+            behaviorID: json => "relationships" => "behavior" => "id"
         )
     }
 }
