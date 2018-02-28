@@ -6,9 +6,15 @@
 //  Copyright © 2018 Cultivr. All rights reserved.
 //
 
+public typealias BehaviorTask = Task<Float, Profile.Behavior, Reason>
 public typealias BehaviorsTask = Task<Float, [Profile.Behavior], Reason>
 
 public extension DISCAPI {
+    func fetchBehavior(withID id: Int) -> BehaviorTask {
+        let path = Profile.Behavior.pathForBehavior(withID: id)
+        return request(Resource(path: path, method: .get))
+    }
+    
     func fetchBehaviors(group: Profile.Behavior.Group? = nil) -> BehaviorsTask {
         let path = Profile.Behavior.pathForBehavior(withID: nil)
         let queryParameters = parameters(group: group)

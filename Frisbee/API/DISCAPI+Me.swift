@@ -9,7 +9,7 @@
 public extension DISCAPI {
     func fetchMyQuestions() -> QuestionsTask {
         let path = .me + Question.path
-        return request(Resource(path: path, method: .get))
+        return request(containedResource(path: path, method: .get))
     }
 }
 
