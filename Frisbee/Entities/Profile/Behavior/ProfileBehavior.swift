@@ -31,7 +31,7 @@ extension Profile.Behavior: Decodable {
             secondaryRepresentationImageName: json => "data" => "attributes" => "secondary_image",
             keywords: json => "data" => "attributes" => "keywords",
             groupName: json => "data" => "attributes" => "group_type",
-            contents: nil
+            contents: json =>? "included"
         )
     }
 }
