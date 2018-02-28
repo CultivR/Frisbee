@@ -18,7 +18,7 @@ public extension DISCAPI {
     func fetchBehaviors(group: Profile.Behavior.Group? = nil) -> BehaviorsTask {
         let path = Profile.Behavior.pathForBehavior(withID: nil)
         let queryParameters = parameters(group: group)
-        return request(Resource(path: path, queryParameters: queryParameters, method: .get))
+        return request(containedResource(path: path, queryParameters: queryParameters, method: .get))
     }
 }
 
