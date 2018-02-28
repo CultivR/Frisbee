@@ -18,7 +18,7 @@ public extension DISCAPI {
                 company: company,
                 jobTitle: jobTitle,
                 traits: traits,
-                behaviorID: 2
+                behaviorID: .randomBehaviorID
             )
         )
     }
@@ -34,5 +34,12 @@ public extension DISCAPI {
                 behaviorID: profile.behaviorID
             )
         )
+    }
+}
+
+private extension Int {
+    static var randomBehaviorID: Int {
+        let ids = [2, 3, 4, 6, 7, 8, 10, 11, 12, 14, 15, 16]
+        return ids[Int(arc4random_uniform(UInt32(ids.count)))]
     }
 }
