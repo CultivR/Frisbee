@@ -7,6 +7,11 @@
 //
 
 public extension DISCAPI {
+    func fetchMyBehavior(for id: Int) -> BehaviorTask {
+        let path = .me + Profile.Behavior.pathForBehavior(withID: id)
+        return request(Resource(path: path, method: .get))
+    }
+    
     func fetchMyQuestions() -> QuestionsTask {
         let path = .me + Question.path
         return request(containedResource(path: path, method: .get))
