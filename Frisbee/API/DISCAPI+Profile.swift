@@ -39,7 +39,7 @@ public extension DISCAPI {
 
 private extension Int {
     static var randomBehaviorID: Int {
-        let ids = [2, 3, 4, 6, 7, 8, 10, 11, 12, 14, 15, 16]
+        let ids = [2, 3, 6, 7, 10, 11, 14, 15]
         return ids[Int(arc4random_uniform(UInt32(ids.count)))]
     }
 }
