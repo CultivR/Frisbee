@@ -19,6 +19,7 @@ public extension Profile.Behavior {
         public let primaryBehavior: Frisbee.Behavior
         public let secondaryBehavior: Frisbee.Behavior?
         public let keywords: String
+        public let tagline: String
         public let group: Group
     }
 }
@@ -45,13 +46,14 @@ extension Profile.Behavior.Base: Decodable {
             secondaryRepresentationName: json => "attributes" => "secondary_name",
             secondaryRepresentationImageName: json => "attributes" => "secondary_image",
             keywords: json => "attributes" => "keywords",
+            tagline: json => "attributes" => "tagline",
             groupName: json => "attributes" => "group_type"
         )
     }
 }
 
 extension Profile.Behavior.Base: Sqlable {
-    public static let tableLayout = [id, primaryName, primaryColorName, primaryRepresentationName, primaryRepresentationImageName, secondaryName, secondaryColorName, secondaryRepresentationName, secondaryRepresentationImageName, keywords, groupName]
+    public static let tableLayout = [id, primaryName, primaryColorName, primaryRepresentationName, primaryRepresentationImageName, secondaryName, secondaryColorName, secondaryRepresentationName, secondaryRepresentationImageName, keywords, tagline, groupName]
     
     static let id = Column("id", .integer, PrimaryKey(autoincrement: false))
     static let primaryName = Column("primaryName", .text)
@@ -63,6 +65,7 @@ extension Profile.Behavior.Base: Sqlable {
     static let secondaryRepresentationName = Column("secondaryRepresentationName", .nullable(.text))
     static let secondaryRepresentationImageName = Column("secondaryRepresentationImageName", .nullable(.text))
     static let keywords = Column("keywords", .text)
+    static let tagline = Column("tagline", .text)
     static let groupName = Column("groupName", .text)
     
     public init(row: ReadRow) throws {
@@ -77,6 +80,7 @@ extension Profile.Behavior.Base: Sqlable {
             secondaryRepresentationName: row.get(Profile.Behavior.Base.secondaryRepresentationName),
             secondaryRepresentationImageName: row.get(Profile.Behavior.Base.secondaryRepresentationImageName),
             keywords: row.get(Profile.Behavior.Base.keywords),
+            tagline: row.get(Profile.Behavior.Base.tagline),
             groupName: row.get(Profile.Behavior.Base.groupName)
         )
     }
@@ -93,6 +97,7 @@ extension Profile.Behavior.Base: Sqlable {
         case Profile.Behavior.Base.secondaryRepresentationName: return secondaryBehavior?.representation.name
         case Profile.Behavior.Base.secondaryRepresentationImageName: return secondaryBehavior?.representation.image.name
         case Profile.Behavior.Base.keywords: return keywords
+        case Profile.Behavior.Base.tagline: return tagline
         case Profile.Behavior.Base.groupName: return group.name
         default: return nil
         }
@@ -100,7 +105,7 @@ extension Profile.Behavior.Base: Sqlable {
 }
 
 private extension Profile.Behavior.Base {
-    init(id: Int, primaryName: String, primaryColorName: String, primaryRepresentationName: String, primaryRepresentationImageName: String, secondaryName: String?, secondaryColorName: String?, secondaryRepresentationName: String?, secondaryRepresentationImageName: String?, keywords: String, groupName: String) {
+    init(id: Int, primaryName: String, primaryColorName: String, primaryRepresentationName: String, primaryRepresentationImageName: String, secondaryName: String?, secondaryColorName: String?, secondaryRepresentationName: String?, secondaryRepresentationImageName: String?, keywords: String, tagline: String, groupName: String) {
         self.init(
             id: id,
             primaryBehavior: .init(
@@ -124,6 +129,7 @@ private extension Profile.Behavior.Base {
                 }
             },
             keywords: keywords,
+            tagline: tagline,
             group: .init(
                 name: groupName
             )
