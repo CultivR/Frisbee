@@ -1,3 +1,4 @@
+github "Cultivr/Acracy" "master"
 github "Cultivr/Emissary" "master"
 github "Cultivr/Province" "master"
 github "ulrikdamm/Sqlable" "master"

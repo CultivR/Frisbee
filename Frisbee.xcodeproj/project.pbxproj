@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		170509AB205646A800BEFA7D /* Acracy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1796C89120564251008CBD92 /* Acracy.framework */; };
+		170509AE205647AC00BEFA7D /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170509AD205647AC00BEFA7D /* Mock.swift */; };
 		1721E324202E957D00DCC43E /* Sqlable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1721E323202E957D00DCC43E /* Sqlable.framework */; };
 		1735ACFE1F9BBCC800F3B86C /* Frisbee.h in Headers */ = {isa = PBXBuildFile; fileRef = 1735ACFC1F9BBCC800F3B86C /* Frisbee.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1735AD081F9BBD7800F3B86C /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1735AD021F9BBD7700F3B86C /* KeychainAccess.framework */; };
@@ -35,6 +37,7 @@
 		17864AA12035FFF300357C63 /* ID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17864AA02035FFF300357C63 /* ID.swift */; };
 		179352E51FDF5A6800A1B666 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179352E41FDF5A6800A1B666 /* Answer.swift */; };
 		179352E71FDF5A8200A1B666 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179352E61FDF5A8200A1B666 /* Question.swift */; };
+		1796C89320564536008CBD92 /* FrisbeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17752DFB1FBBACF500F81A48 /* FrisbeeTests.swift */; };
 		179D6C9320356EB800D0D072 /* DISCAPI+Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179D6C9220356EB800D0D072 /* DISCAPI+Question.swift */; };
 		17F4B14E204624B0000DE7B1 /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F4B14D204624B0000DE7B1 /* Content.swift */; };
 /* End PBXBuildFile section */
@@ -50,6 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		170509AD205647AC00BEFA7D /* Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mock.swift; sourceTree = "<group>"; };
 		1721E323202E957D00DCC43E /* Sqlable.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sqlable.framework; path = Carthage/Build/iOS/Sqlable.framework; sourceTree = "<group>"; };
 		1735ACFA1F9BBCC800F3B86C /* Frisbee.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Frisbee.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1735ACFC1F9BBCC800F3B86C /* Frisbee.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Frisbee.h; sourceTree = "<group>"; };
@@ -82,6 +86,7 @@
 		17864AA02035FFF300357C63 /* ID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID.swift; sourceTree = "<group>"; };
 		179352E41FDF5A6800A1B666 /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
 		179352E61FDF5A8200A1B666 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		1796C89120564251008CBD92 /* Acracy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Acracy.framework; path = Carthage/Build/iOS/Acracy.framework; sourceTree = "<group>"; };
 		179D6C9220356EB800D0D072 /* DISCAPI+Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DISCAPI+Question.swift"; sourceTree = "<group>"; };
 		17F4B14D204624B0000DE7B1 /* Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				170509AB205646A800BEFA7D /* Acracy.framework in Frameworks */,
 				1735AD081F9BBD7800F3B86C /* KeychainAccess.framework in Frameworks */,
 				1735AD091F9BBD7800F3B86C /* Cache.framework in Frameworks */,
 				1735AD0A1F9BBD7800F3B86C /* Emissary.framework in Frameworks */,
@@ -183,6 +189,7 @@
 			children = (
 				17537DDD20335E1D0095E477 /* Dependencies.swift */,
 				17864AA02035FFF300357C63 /* ID.swift */,
+				170509AD205647AC00BEFA7D /* Mock.swift */,
 				17537DE92033A9A90095E477 /* Name.swift */,
 			);
 			path = Framework;
@@ -252,6 +259,7 @@
 		179456671F1EDB5400315769 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1796C89120564251008CBD92 /* Acracy.framework */,
 				1721E323202E957D00DCC43E /* Sqlable.framework */,
 				1735AD031F9BBD7700F3B86C /* Cache.framework */,
 				1735AD061F9BBD7700F3B86C /* Decodable.framework */,
@@ -388,9 +396,11 @@
 				179352E71FDF5A8200A1B666 /* Question.swift in Sources */,
 				17537DEC2033AE6A0095E477 /* DISCAPI+Behavior.swift in Sources */,
 				17864A9F2035FDF500357C63 /* DISCAPI+Profile.swift in Sources */,
+				170509AE205647AC00BEFA7D /* Mock.swift in Sources */,
 				177C9E672037C4E100FE9B8D /* DISCAPI+Me.swift in Sources */,
 				1737A57D203741B60079856E /* Image.swift in Sources */,
 				17537DEA2033A9A90095E477 /* Name.swift in Sources */,
+				1796C89320564536008CBD92 /* FrisbeeTests.swift in Sources */,
 				179352E51FDF5A6800A1B666 /* Answer.swift in Sources */,
 				17537DCF20335C3E0095E477 /* Color.swift in Sources */,
 				17537DE62033629A0095E477 /* Trait.swift in Sources */,
@@ -587,6 +597,10 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5BJ5JFAS37;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = FrisbeeTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -602,6 +616,10 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5BJ5JFAS37;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = FrisbeeTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
