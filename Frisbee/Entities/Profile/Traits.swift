@@ -48,7 +48,7 @@ extension Profile.Traits: Decodable {
 
 private extension Profile.Traits {
     var rankedValues: [Int] {
-        return [dominantValue, interactiveValue, supportiveValue, conscientiousValue].sorted()
+        return [dominantValue, interactiveValue, supportiveValue, conscientiousValue].sorted().reversed()
     }
     
     func trait(forValue value: Int) -> Frisbee.Behavior.Trait! {
