@@ -18,7 +18,7 @@ public extension DISCAPI {
                 company: company,
                 jobTitle: jobTitle,
                 traits: traits,
-                behaviorID: .randomBehaviorID
+                behaviorID: traits.behaviorID
             )
         )
     }
@@ -37,9 +37,35 @@ public extension DISCAPI {
     }
 }
 
-private extension Int {
-    static var randomBehaviorID: Int {
-        let ids = [2, 3, 6, 7, 10, 11, 14, 15]
-        return ids[Int(arc4random_uniform(UInt32(ids.count)))]
+private extension Profile.Traits {
+    var behaviorID: Int! {
+        switch (primaryTrait, secondaryTrait) {
+        case (.dominant, .conscientious):
+            return 2
+        case (.dominant, .interactive):
+            return 3
+        case (.dominant, .supportive):
+            return 4
+        case (.interactive, .dominant):
+            return 6
+        case (.interactive, .supportive):
+            return 7
+        case (.interactive, .conscientious):
+            return 8
+        case (.supportive, .interactive):
+            return 10
+        case (.supportive, .conscientious):
+            return 11
+        case (.supportive, .dominant):
+            return 12
+        case (.conscientious, .dominant):
+            return 14
+        case (.conscientious, .supportive):
+            return 15
+        case (.conscientious, .interactive):
+            return 16
+        default:
+            return nil
+        }
     }
 }
