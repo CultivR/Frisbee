@@ -23,3 +23,9 @@ public extension Profile {
         return .init(id: id, name: name, company: company, jobTitle: jobTitle, traits: traits, behaviorID: behaviorID)
     }
 }
+
+public extension Profile.Behavior.Base {
+    static func mock(id: Int, primaryBehavior: Frisbee.Behavior, secondaryBehavior: Frisbee.Behavior?, keywords: String, tagline: String, group: Profile.Behavior.Group) -> Profile.Behavior.Base {
+        return .init(id: id, primaryBehavior: primaryBehavior, secondaryBehavior: secondaryBehavior, keywords: keywords, tagline: tagline, group: group)
+    }
+}
