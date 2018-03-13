@@ -23,6 +23,15 @@ public extension Profile {
         public init() {
             self.init(dominantValue: 0, interactiveValue: 0, supportiveValue: 0, conscientiousValue: 0)
         }
+        
+        
+        var primaryTrait: Frisbee.Behavior.Trait {
+            return trait(forValue: rankedValues[0])
+        }
+        
+        var secondaryTrait: Frisbee.Behavior.Trait {
+            return trait(forValue: rankedValues[1])
+        }
     }
 }
 
@@ -34,5 +43,26 @@ extension Profile.Traits: Decodable {
             supportiveValue: json => "supportive",
             conscientiousValue: json => "conscientious"
         )
+    }
+}
+
+private extension Profile.Traits {
+    var rankedValues: [Int] {
+        return [dominantValue, interactiveValue, supportiveValue, conscientiousValue].sorted()
+    }
+    
+    func trait(forValue value: Int) -> Frisbee.Behavior.Trait! {
+        switch value {
+        case dominantValue:
+            return .dominant
+        case interactiveValue:
+            return .interactive
+        case supportiveValue:
+            return .supportive
+        case conscientiousValue:
+            return .conscientious
+        default:
+            return nil
+        }
     }
 }

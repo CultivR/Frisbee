@@ -17,7 +17,6 @@
 		1735AD0B1F9BBD7800F3B86C /* Province.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1735AD051F9BBD7700F3B86C /* Province.framework */; };
 		1735AD0C1F9BBD7800F3B86C /* Decodable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1735AD061F9BBD7700F3B86C /* Decodable.framework */; };
 		1735AD0D1F9BBD7800F3B86C /* SwiftTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1735AD071F9BBD7700F3B86C /* SwiftTask.framework */; };
-		1735AD121F9BC32800F3B86C /* DISCAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17688C1E1F3CF6FA00CF59B6 /* DISCAPIError.swift */; };
 		1735AD161F9BC93C00F3B86C /* DISCAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17688C271F3CF9AE00CF59B6 /* DISCAPI.swift */; };
 		1737A57D203741B60079856E /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1737A57C203741B60079856E /* Image.swift */; };
 		17537DCF20335C3E0095E477 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17537DCE20335C3E0095E477 /* Color.swift */; };
@@ -73,7 +72,6 @@
 		17537DE52033629A0095E477 /* Trait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trait.swift; sourceTree = "<group>"; };
 		17537DE92033A9A90095E477 /* Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Name.swift; sourceTree = "<group>"; };
 		17537DEB2033AE6A0095E477 /* DISCAPI+Behavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DISCAPI+Behavior.swift"; sourceTree = "<group>"; };
-		17688C1E1F3CF6FA00CF59B6 /* DISCAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DISCAPIError.swift; sourceTree = "<group>"; };
 		17688C271F3CF9AE00CF59B6 /* DISCAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DISCAPI.swift; sourceTree = "<group>"; };
 		17752DF91FBBACF400F81A48 /* FrisbeeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FrisbeeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		17752DFB1FBBACF500F81A48 /* FrisbeeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrisbeeTests.swift; sourceTree = "<group>"; };
@@ -231,7 +229,6 @@
 				177C9E662037C4E100FE9B8D /* DISCAPI+Me.swift */,
 				17864A9E2035FDF500357C63 /* DISCAPI+Profile.swift */,
 				179D6C9220356EB800D0D072 /* DISCAPI+Question.swift */,
-				17688C1E1F3CF6FA00CF59B6 /* DISCAPIError.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -389,7 +386,6 @@
 				1735AD161F9BC93C00F3B86C /* DISCAPI.swift in Sources */,
 				177687E91FCE0C5B009463B7 /* Profile.swift in Sources */,
 				17F4B14E204624B0000DE7B1 /* Content.swift in Sources */,
-				1735AD121F9BC32800F3B86C /* DISCAPIError.swift in Sources */,
 				17537DDB20335DBF0095E477 /* Traits.swift in Sources */,
 				17537DE220335EA80095E477 /* Group.swift in Sources */,
 				179352E71FDF5A8200A1B666 /* Question.swift in Sources */,
