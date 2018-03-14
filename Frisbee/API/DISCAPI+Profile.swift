@@ -37,8 +37,27 @@ public extension DISCAPI {
     }
 }
 
+public extension Profile.Traits {
+    var rankedBehaviorIDs: [Int] {
+        return rankedTraits.map {
+            switch $0 {
+            case .dominant:
+                return 1
+            case .interactive:
+                return 5
+            case .supportive:
+                return 9
+            case .conscientious:
+                return 13
+            }
+        }
+    }
+}
+
 private extension Profile.Traits {
     var behaviorID: Int! {
+        let primaryTrait = rankedTraits[0]
+        let secondaryTrait = rankedTraits[1]
         switch (primaryTrait, secondaryTrait) {
         case (.dominant, .conscientious):
             return 2

@@ -13,6 +13,14 @@ public extension Profile {
         public let supportiveValue: Int
         public let conscientiousValue: Int
         
+        public var rankedValues: [Int] {
+            return [dominantValue, interactiveValue, supportiveValue, conscientiousValue].sorted().reversed()
+        }
+        
+        var rankedTraits: [Frisbee.Behavior.Trait] {
+            return rankedValues.map(trait)
+        }
+        
         public init(dominantValue: Int, interactiveValue: Int, supportiveValue: Int, conscientiousValue: Int) {
             self.dominantValue = dominantValue
             self.interactiveValue = interactiveValue
@@ -22,15 +30,6 @@ public extension Profile {
         
         public init() {
             self.init(dominantValue: 0, interactiveValue: 0, supportiveValue: 0, conscientiousValue: 0)
-        }
-        
-        
-        var primaryTrait: Frisbee.Behavior.Trait {
-            return trait(forValue: rankedValues[0])
-        }
-        
-        var secondaryTrait: Frisbee.Behavior.Trait {
-            return trait(forValue: rankedValues[1])
         }
     }
 }
@@ -47,10 +46,6 @@ extension Profile.Traits: Decodable {
 }
 
 private extension Profile.Traits {
-    var rankedValues: [Int] {
-        return [dominantValue, interactiveValue, supportiveValue, conscientiousValue].sorted().reversed()
-    }
-    
     func trait(forValue value: Int) -> Frisbee.Behavior.Trait! {
         switch value {
         case dominantValue:
