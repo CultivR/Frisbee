@@ -8,28 +8,43 @@
 
 public extension Profile {
     struct Traits {
-        public let dominantValue: Int
-        public let interactiveValue: Int
-        public let supportiveValue: Int
-        public let conscientiousValue: Int
+        private let values: [Frisbee.Behavior.Trait: Int]
         
-        public var rankedValues: [Int] {
-            return [dominantValue, interactiveValue, supportiveValue, conscientiousValue].sorted().reversed()
+        public var dominantValue: Int {
+            return values[.dominant]!
+        }
+        
+        public var interactiveValue: Int {
+            return values[.interactive]!
+        }
+        
+        public var supportiveValue: Int {
+            return values[.supportive]!
+        }
+        
+        public var conscientiousValue: Int {
+            return values[.conscientious]!
+        }
+        
+        public var rankedValues: [(Frisbee.Behavior.Trait, Int)] {
+            return values.sorted { $0.value > $1.value }
         }
         
         var rankedTraits: [Frisbee.Behavior.Trait] {
-            return rankedValues.map(trait)
+            return rankedValues.map { $0.0 }
         }
         
-        public init(dominantValue: Int, interactiveValue: Int, supportiveValue: Int, conscientiousValue: Int) {
-            self.dominantValue = dominantValue
-            self.interactiveValue = interactiveValue
-            self.supportiveValue = supportiveValue
-            self.conscientiousValue = conscientiousValue
+        public init(values: [Frisbee.Behavior.Trait: Int] = [:]) {
+            self.values = values
         }
         
-        public init() {
-            self.init(dominantValue: 0, interactiveValue: 0, supportiveValue: 0, conscientiousValue: 0)
+        init(dominantValue: Int, interactiveValue: Int, supportiveValue: Int, conscientiousValue: Int) {
+            values = [
+                .dominant: dominantValue,
+                .interactive: interactiveValue,
+                .supportive: supportiveValue,
+                .conscientious: conscientiousValue
+            ]
         }
     }
 }
@@ -42,22 +57,5 @@ extension Profile.Traits: Decodable {
             supportiveValue: json => "supportive",
             conscientiousValue: json => "conscientious"
         )
-    }
-}
-
-private extension Profile.Traits {
-    func trait(forValue value: Int) -> Frisbee.Behavior.Trait! {
-        switch value {
-        case dominantValue:
-            return .dominant
-        case interactiveValue:
-            return .interactive
-        case supportiveValue:
-            return .supportive
-        case conscientiousValue:
-            return .conscientious
-        default:
-            return nil
-        }
     }
 }
