@@ -11,19 +11,19 @@ public extension Profile {
         private let values: [Frisbee.Behavior.Trait: Int]
         
         public var dominantValue: Int {
-            return values[.dominant]!
+            return values[.dominant] ?? 0
         }
         
         public var interactiveValue: Int {
-            return values[.interactive]!
+            return values[.interactive] ?? 0
         }
         
         public var supportiveValue: Int {
-            return values[.supportive]!
+            return values[.supportive] ?? 0
         }
         
         public var conscientiousValue: Int {
-            return values[.conscientious]!
+            return values[.conscientious] ?? 0
         }
         
         public var rankedValues: [(Frisbee.Behavior.Trait, Int)] {
