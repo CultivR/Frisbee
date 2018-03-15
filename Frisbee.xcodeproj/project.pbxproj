@@ -295,7 +295,7 @@
 			dependencies = (
 			);
 			name = Frisbee;
-			productName = Pineapple;
+			productName = Frisbee;
 			productReference = 1735ACFA1F9BBCC800F3B86C /* Frisbee.framework */;
 			productType = "com.apple.product-type.framework";
 		};
