@@ -1,3 +1,4 @@
-/Cartfile.resolved
+*.DS_Store
 /Carthage
 /Frisbee.xcodeproj/project.xcworkspace/xcuserdata/Jordan.xcuserdatad/UserInterfaceState.xcuserstate
+/Frisbee.xcodeproj/xcuserdata/Jordan.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist

@@ -1,0 +1,7 @@
+github "Anviking/Decodable" "edc8c2d89c517d2556fa8408278d646957bbece9"
+github "Cultivr/Cache" "6d793fe5b288db7035a0427920fea8cdd2b596a4"
+github "Cultivr/Emissary" "a6cb4efb2e9fbc458c23c450655ed43a2aa314fa"
+github "Cultivr/Province" "026cd49c8c22474742477075c46267bdde3318cf"
+github "Cultivr/SwiftTask" "bcf97f7012f3d0cf6d583456337ce7c45da18ce7"
+github "kishikawakatsumi/KeychainAccess" "v3.1.0"
+github "ulrikdamm/Sqlable" "813990309e5aae81c5c82bfc33c91ceceddb58f1"
