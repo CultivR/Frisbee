@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		170509AB205646A800BEFA7D /* Acracy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1796C89120564251008CBD92 /* Acracy.framework */; };
 		170509AE205647AC00BEFA7D /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170509AD205647AC00BEFA7D /* Mock.swift */; };
 		1721E324202E957D00DCC43E /* Sqlable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1721E323202E957D00DCC43E /* Sqlable.framework */; };
 		1735ACFE1F9BBCC800F3B86C /* Frisbee.h in Headers */ = {isa = PBXBuildFile; fileRef = 1735ACFC1F9BBCC800F3B86C /* Frisbee.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -83,7 +82,6 @@
 		17864AA02035FFF300357C63 /* ID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID.swift; sourceTree = "<group>"; };
 		179352E41FDF5A6800A1B666 /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
 		179352E61FDF5A8200A1B666 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
-		1796C89120564251008CBD92 /* Acracy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Acracy.framework; path = Carthage/Build/iOS/Acracy.framework; sourceTree = "<group>"; };
 		179D6C9220356EB800D0D072 /* DISCAPI+Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DISCAPI+Question.swift"; sourceTree = "<group>"; };
 		17F4B14D204624B0000DE7B1 /* Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -93,7 +91,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				170509AB205646A800BEFA7D /* Acracy.framework in Frameworks */,
 				1735AD081F9BBD7800F3B86C /* KeychainAccess.framework in Frameworks */,
 				1735AD091F9BBD7800F3B86C /* Cache.framework in Frameworks */,
 				1735AD0A1F9BBD7800F3B86C /* Emissary.framework in Frameworks */,
@@ -255,7 +252,6 @@
 		179456671F1EDB5400315769 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1796C89120564251008CBD92 /* Acracy.framework */,
 				1721E323202E957D00DCC43E /* Sqlable.framework */,
 				1735AD031F9BBD7700F3B86C /* Cache.framework */,
 				1735AD061F9BBD7700F3B86C /* Decodable.framework */,
