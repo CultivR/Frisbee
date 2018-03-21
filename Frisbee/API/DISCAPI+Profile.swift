@@ -31,7 +31,7 @@ public extension DISCAPI {
                 company: company ?? profile.company,
                 jobTitle: jobTitle ?? profile.jobTitle,
                 traits: traits ?? profile.traits,
-                behaviorID: profile.behaviorID
+                behaviorID: traits?.behaviorID ?? profile.behaviorID
             )
         )
     }
