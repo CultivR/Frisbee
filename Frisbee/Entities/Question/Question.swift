@@ -11,6 +11,7 @@ public struct Question {
     public let number: Int
     public let prompt: String
     public let answers: [Answer]?
+    public let rankings: [Ranking]?
 }
 
 extension Question: Decodable {
@@ -19,7 +20,8 @@ extension Question: Decodable {
             id: json => "id",
             number: json => "attributes" => "number",
             prompt: json => "attributes" => "question",
-            answers: json => "attributes" => "options"
+            answers: json => "attributes" => "options",
+            rankings: json => "attributes" => "rankings"
         )
     }
 }
