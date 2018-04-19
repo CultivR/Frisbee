@@ -23,7 +23,7 @@ public extension DISCAPI {
         )
     }
     
-    func update(_ profile: Profile, name: String, company: String?, jobTitle: String?, traits: Profile.Traits) -> ProfileTask {
+    func update(_ profile: Profile, name: String?, company: String?, jobTitle: String?, traits: Profile.Traits) -> ProfileTask {
         return .init(
             value: .init(
                 id: profile.id,
